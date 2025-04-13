@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
     <title>My Windows XP Portfolio</title>
+    <link rel="icon" href="img/icons/my-computer.png" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/taskbar.css">
@@ -92,6 +93,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const fromStartup = urlParams.get('fromStartup');
+            
+            // Detect mobile/tablet and suggest landscape mode
+            // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            //     if (window.innerHeight > window.innerWidth) {
+            //         alert("For the best Windows XP experience, please rotate your device to landscape mode.");
+            //     }
+            // }
             
             if (fromStartup === 'true') {
                 // Play the startup sound when the desktop is shown
