@@ -2,7 +2,7 @@
 const CONFIG = {
     // User details
     user: {
-        name: "Your Name",
+        name: "Dhaval Singh",
         title: "Web Developer",
         avatar: "img/user.png"
     },
