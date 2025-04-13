@@ -1,0 +1,91 @@
+.window {
+    position: absolute;
+    min-width: 320px;
+    min-height: 200px;
+    background-color: #ece9d8;
+    border: 1px solid #0a246a;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    resize: both;
+    overflow: hidden;
+}
+
+.window.active {
+    z-index: 100;
+}
+
+.window-header {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    background-color: var(--xp-window-blue);
+    background-image: linear-gradient(to right, var(--xp-window-title-gradient-start), var(--xp-window-title-gradient-end));
+    color: white;
+    cursor: move;
+}
+
+.window-title {
+    font-weight: bold;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 5px;
+}
+
+.window-controls {
+    display: flex;
+}
+
+.window-controls button {
+    width: 22px;
+    height: 22px;
+    margin-left: 2px;
+    border: 1px solid white;
+    background-color: var(--xp-window-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.window-controls button:hover {
+    background-color: #ff6565;
+}
+
+.minimize::before {
+    content: "_";
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    position: relative;
+    top: -5px;
+}
+
+.maximize::before {
+    content: "□";
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.close::before {
+    content: "×";
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.window-content {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 10px;
+    background-color: white;
+}

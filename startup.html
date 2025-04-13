@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows XP Startup</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        
+        .startup-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .startup-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .logo-image {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .microsoft-text {
+            font-size: 24px;
+            color: #878787;
+            font-weight: normal;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+        
+        .windows-text {
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+            line-height: 1;
+            position: relative;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .xp-text {
+            font-size: 20px;
+            color: #ff9d00;
+            position: absolute;
+            top: 0;
+            right: -30px;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .loading-bar-container {
+            width: 400px;
+            max-width: 80%;
+            height: 20px;
+            background-color: #113259;
+            border: 1px solid #1c5eb1;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+        
+        .loading-blocks {
+            display: flex;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: moveBlocks 3s infinite linear;
+        }
+        
+        .loading-block {
+            width: 30px;
+            height: 100%;
+            background: linear-gradient(to right, #2671ce, #3a85e0, #2671ce);
+            margin-right: 15px;
+            box-shadow: 0 0 10px 2px #3a85e0;
+        }
+        
+        @keyframes moveBlocks {
+            0% {
+                transform: translateX(-200px);
+            }
+            100% {
+                transform: translateX(500px);
+            }
+        }
+        
+        .loading-text {
+            font-size: 16px;
+            color: #fff;
+            margin-top: 20px;
+            font-weight: bold;
+            text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .copyright {
+            position: absolute;
+            bottom: 20px;
+            font-size: 12px;
+            color: #fff;
+            opacity: 0.7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .copyright-ms {
+            margin-bottom: 5px;
+        }
+        
+        .copyright-name {
+            font-weight: bold;
+            font-size: 14px;
+            color: #fff;
+            margin-top: 5px;
+        }
+
+        .safe-mode {
+            display: none;
+            position: absolute;
+            bottom: 60px;
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="startup-container">
+        <div class="startup-logo">
+            <img src="img/icons/start-button.svg" alt="Windows Logo" class="logo-image">
+            <div class="logo-text">
+                <div class="microsoft-text">Microsoft</div>
+                <div class="windows-text">
+                    Windows
+                    <span class="xp-text">XP</span>
+                </div>
+            </div>
+        </div>
+        <div class="loading-bar-container">
+            <div class="loading-blocks">
+                <div class="loading-block"></div>
+                <div class="loading-block"></div>
+                <div class="loading-block"></div>
+                <div class="loading-block"></div>
+            </div>
+        </div>
+        <div class="loading-text">Starting Windows...</div>
+        <div class="safe-mode">Safe Mode</div>
+        <div class="copyright">
+            <div class="copyright-ms">Microsoft© Windows XP</div>
+            <div class="copyright-name">Dhaval Singh</div>
+        </div>
+    </div>
+
+    <script>
+        // Redirect to main page after 5 seconds
+        setTimeout(() => {
+            // Pass a parameter to indicate we're coming from startup
+            window.location.href = "index.html?fromStartup=true";
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* Global styles */
+:root {
+    --xp-blue: #245edb;
+    --xp-light-blue: #3a6ee8;
+    --xp-taskbar-blue: #245edb;
+    --xp-window-blue: #0055e5;
+    --xp-window-title-gradient-start: #0a246a;
+    --xp-window-title-gradient-end: #3a6ee8;
+    --xp-start-green: #338f33;
+    --xp-start-green-light: #4ac64a;
+    --xp-start-green-border: #2d7b2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background-color: #108a42;
+    background-image: url('../img/wallpaper/main.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    cursor: default;
+}
+
+.hidden {
+    display: none !important;
+}

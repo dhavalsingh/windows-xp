@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Windows XP Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/taskbar.css">
+    <link rel="stylesheet" href="css/window.css">
+    <link rel="stylesheet" href="css/window-content.css">
+</head>
+<body>
+    <div id="desktop">
+        <!-- Desktop icons will be added dynamically via JavaScript -->
+    </div>
+
+    <div id="taskbar">
+        <div id="start-button">
+            <img src="img/icons/start-button.svg" alt="Start">
+            <span>start</span>
+        </div>
+        <div class="taskbar-tray">
+            <img src="img/icons/volume.png" alt="Volume" class="tray-icon">
+            <img src="img/icons/user.png" alt="User" class="tray-icon">
+            <div id="time-display"></div>
+        </div>
+    </div>
+
+    <div id="start-menu" class="hidden">
+        <div class="start-menu-header">
+            <div class="user-info">
+                <img src="img/user.png" alt="User">
+                <span>User Name</span>
+            </div>
+        </div>
+        <div class="start-menu-content">
+            <div class="start-menu-left">
+                <div class="start-menu-items">
+                    <!-- Start menu items will be added dynamically -->
+                </div>
+                
+                <div class="start-menu-divider"></div>
+                
+                <div class="start-menu-desktop-items">
+                    <!-- Desktop icons will be added dynamically -->
+                </div>
+            </div>
+            <div class="start-menu-right">
+                <div class="start-menu-links">
+                    <!-- Links will be added dynamically -->
+                </div>
+            </div>
+        </div>
+        <div class="start-menu-footer">
+            <div class="system-button logoff">
+                <img src="img/icons/logoff.png" alt="Restart">
+                <span>Restart</span>
+            </div>
+            <div class="system-button shutdown">
+                <img src="img/icons/shutdown.png" alt="Shut Down">
+                <span>Shut Down</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Window template -->
+    <div id="window-template" class="window hidden" data-id="">
+        <div class="window-header">
+            <div class="window-title"></div>
+            <div class="window-controls">
+                <button class="minimize"></button>
+                <button class="maximize"></button>
+                <button class="close"></button>
+            </div>
+        </div>
+        <div class="window-content"></div>
+    </div>
+
+    <audio id="startup-sound" preload="auto">
+        <source src="sounds/xp-startup.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/config.js"></script>
+    <script src="js/desktop.js"></script>
+    <script src="js/window.js"></script>
+    <script src="js/taskbar.js"></script>
+    <script src="js/app.js"></script>
+    
+    <script>
+        // Check if we're coming from the startup screen
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fromStartup = urlParams.get('fromStartup');
+            
+            if (fromStartup === 'true') {
+                // Play the startup sound when the desktop is shown
+                const startupSound = document.getElementById('startup-sound');
+                try {
+                    startupSound.play();
+                } catch (e) {
+                    console.log('Audio could not be played', e);
+                }
+                
+                // Remove the parameter from URL to prevent playing sound on refresh
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+    </script>
+</body>
+</html>
