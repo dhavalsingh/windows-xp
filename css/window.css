@@ -10,6 +10,11 @@
     overflow: hidden;
 }
 
+#window-about-me {
+    background-color: #f0f0f0;
+    border: 1px solid #999;
+}
+
 .window.active {
     z-index: 100;
 }
@@ -33,6 +38,14 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin-left: 5px;
+}
+
+#window-about-me .window-title {
+    background-image: url('../img/icons/notepad.png');
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: left center;
+    padding-left: 22px;
 }
 
 .window-controls {
@@ -88,4 +101,8 @@
     overflow: auto;
     padding: 10px;
     background-color: white;
+}
+
+#window-about-me .window-header {
+    background-image: linear-gradient(to right, #004e98, #003a69);
 }

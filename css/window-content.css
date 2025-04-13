@@ -7,6 +7,40 @@
     padding: 15px;
 }
 
+/* Notepad Style for About Me */
+#window-about-me .window-content {
+    font-family: 'Consolas', 'Lucida Console', monospace;
+    background-color: white;
+    border: 1px solid #d4d0c8;
+    padding: 5px 10px;
+    line-height: 1.2;
+    white-space: pre-wrap;
+    color: #000;
+    box-shadow: inset 1px 1px 1px #d4d0c8;
+}
+
+#window-about-me .window-content h1,
+#window-about-me .window-content h2,
+#window-about-me .window-content h3,
+#window-about-me .window-content h4 {
+    color: #000;
+    border: none;
+    font-family: 'Consolas', 'Lucida Console', monospace;
+}
+
+#window-about-me .window-content a {
+    color: blue;
+    text-decoration: underline;
+}
+
+#window-about-me .window-content blockquote {
+    margin: 0 0 0 20px;
+    color: #333;
+    font-style: italic;
+    border-left: 2px solid #ccc;
+    padding-left: 10px;
+}
+
 .window-content h2 {
     color: #003399;
     border-bottom: 1px solid #ccc;
